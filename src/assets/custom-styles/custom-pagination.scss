@@ -1,0 +1,45 @@
+.custom-pagination .ngx-pagination {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 3px;
+    color: #030504;
+    background: transparent;
+    text-align: center;
+    padding: 0;
+
+    a {
+      padding: 0;
+      opacity: .5;
+      text-decoration: underline;
+      span {
+        padding: 0 5px;
+      }
+    }
+
+    span {
+      padding: 0 5px;
+      text-align: center;
+    }
+
+    &.current {
+      color: #004F28;
+      opacity: 1;
+      text-align: center;
+    }
+
+    &.pagination-previous {
+      display: none;
+    }
+
+    &.pagination-next {
+      display: none;
+    }
+  }
+
+  a:hover {
+    background-color: unset;
+  }
+}

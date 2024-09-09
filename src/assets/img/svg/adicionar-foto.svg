@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="93" height="93" viewBox="0 0 93 93">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #efeeee;
+      }
+
+      .cls-2 {
+        fill: #656565;
+        font-size: 9px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1117" data-name="Grupo 1117" transform="translate(-998 -109)">
+    <rect id="Retângulo_1884" data-name="Retângulo 1884" class="cls-1" width="93" height="93" rx="8" transform="translate(998 109)"/>
+    <text id="Adicionar_foto" data-name="Adicionar
+foto" class="cls-2" transform="translate(1045 154)"><tspan x="-20.353" y="0">Adicionar</tspan><tspan x="-8.96" y="12">foto</tspan></text>
+  </g>
+</svg>

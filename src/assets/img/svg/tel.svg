@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+  <g id="Grupo_1995" data-name="Grupo 1995" transform="translate(-887 -557)">
+    <g id="Elipse_410" data-name="Elipse 410" transform="translate(887 557)" fill="#fff" stroke="#666" stroke-width="1">
+      <circle cx="22.5" cy="22.5" r="22.5" stroke="none"/>
+      <circle cx="22.5" cy="22.5" r="22" fill="none"/>
+    </g>
+    <path id="Icon_awesome-telegram" data-name="Icon awesome-telegram" d="M10.417.563A10.417,10.417,0,1,0,20.833,10.979,10.415,10.415,0,0,0,10.417.563ZM15.533,7.7l-1.71,8.056c-.126.571-.466.71-.941.441l-2.6-1.92-1.256,1.21a.657.657,0,0,1-.525.256l.185-2.65,4.826-4.36c.21-.185-.046-.29-.323-.105L7.22,12.382l-2.571-.8c-.559-.176-.571-.559.118-.827L14.81,6.88c.466-.168.874.113.722.819Z" transform="translate(899 568.438)" fill="#666"/>
+  </g>
+</svg>
