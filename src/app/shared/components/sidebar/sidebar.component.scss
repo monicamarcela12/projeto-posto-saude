@@ -1,0 +1,243 @@
+  .menu {
+      font-size: 12px !important;
+      font-family: 'Gotham Rounded';
+    }
+    
+    .wrapper {
+      display: flex;
+      width: 100%;
+      align-items: stretch;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background: #F5F5F5;
+    }
+    
+    .sidebar {
+      z-index: 99;
+      max-width: 200px;
+      width: 200px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #FFFFFF;
+      color: #000000;
+      position: fixed;
+      transition: all linear .2s;
+    }
+    
+    .toggle {
+      position: absolute;
+      top: 5px;
+      left: 2px;
+    }
+    
+    .toggle:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    
+    .nav-header {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    
+      img {
+        width: 100px;
+        height: 60px;
+      }
+    }
+    
+    .link-focus {
+      background-color: #688B6C;
+      .section-name {
+      text-transform: uppercase !important;
+      color:#FFF !important;
+      }
+      svg {
+        path {
+          fill: transparent;
+          stroke: #FFF ;
+          color:#fff;
+        }
+      }
+    }
+    
+    .collapsing-links {
+      height: 0;
+      width: 100%;
+      background: #004F28;
+      transition: all linear .1s;
+      li {
+        transition: all linear .1s;
+        height: 0;
+        border-bottom: none;
+      }
+      .section-name {
+        display: none;
+      }
+    }
+    
+    .content {
+      min-height: 100vh;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      margin-left: 200px;
+    }
+    
+    .hide-sidebar {
+      &.sidebar {
+        left: -200px;
+      }
+      &.content {
+        margin-left: 0 !important;
+      }
+    }
+    
+    .smartphone {
+      .sidebar {
+        top: 48px;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+    
+    .only-nav {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    
+      li {
+        width: 100%;
+        height: 40px;
+        transition: all 0.1s linear;
+      }
+    
+      li:last-of-type {
+        border-bottom: none;
+      }
+    
+      a {
+        padding-left: 11px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #696969;
+    
+        &:hover {
+          text-decoration: none;
+        }
+    
+        img {
+          width: 15px;
+        }
+        span {
+          padding-left: 5px;
+        }
+      }
+    }
+    
+    .collapsing-links {
+      height: 0;
+      width: 100%;
+      background: #688B6C;
+      transition: all linear .1s;
+      li {
+        transition: all linear .1s;
+        height: 0;
+        border-bottom: none;
+      }
+      .section-name {
+        display: none;
+      }
+    }
+    
+    .collapsing-links-expanded {
+      background-color: #688B6C;
+      height: 100px;
+      li {
+        height: 45px;
+      }
+      .section-name {
+        display: inline-block;
+        .cursor {
+          display: none;
+        }
+        span:last-of-type {
+          vertical-align: text-top;
+        }
+      }
+    }
+
+    .col-1 {
+      flex: 0 0 18% !important;
+      max-width: 18% !important;
+    }
+
+    @media (max-width: 900px) {
+      .col-1 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+      }
+    }
+
+    @media (max-width: 800px){
+      .col-1 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+      }
+    }
+    @media (max-width: 1000px){
+      .backgroud-menu {
+        background: white !important;   
+        justify-content: space-between;
+        display: flex;
+        /* margin: 20px !important; 
+        text-align-last: center;*/
+      }
+      .justify-content-end {
+        padding-top: 10px;
+      }
+
+      .flex {
+        display: flex !important;
+      }
+    }
+
+    .flex {
+      display: flex !important;
+    }
+
+    .backgroud-menu {
+      background: rgb(230,231,233);
+      background: linear-gradient(0deg, rgba(230,231,233,1) 37%, rgba(243,242,242,0.5861695019804797) 37%, rgba(255,255,255,1) 37%);
+    }
+    
+    .text-gerencial {
+      color: #688B6C !important;
+      font-weight: 700 !important;
+      font-size: small;
+      text-align: center;
+    }
+    .collapsing-links-focus {
+      background: #688B6C;
+      .section-name {
+        .cursor {
+          color: #000000;
+          display: inline;
+        }
+      }
+    }
+    
+    .exit {
+      display: contents;
+      display: flex;
+      justify-content: space-between;
+      bottom: 0;
+      position: absolute;
+      bottom: 0;
+    }

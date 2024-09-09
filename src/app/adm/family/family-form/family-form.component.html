@@ -1,0 +1,129 @@
+<div class="cor-background pl-3">
+  <div class="row">
+    <div class="col-12 pb-3 pt-4">
+      <div class="form-row">
+        <div class="col-lg-12 form-group justify-space">
+          <div class="input-group justify-space">
+            <h3 class="simple-text ml-2 text pl-1">Cadastro de Família</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">   
+        <div class="card">
+          <div class="card-body">
+            <div class="col-12" [formGroup]="formGroup">
+              <div class="row row-area">
+                <div class="col-8 form-group">
+                  <label>Endreço</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" id="endereco" formControlName="endereco"
+                    [ngClass]="{'is-invalid': checkInvalidField('endereco')}">
+                  </div>
+                </div>
+                <div class="col-1 form-group">
+                  <label>Número</label>
+                  <div class="input-group">
+                    <input type="number"  class="form-control" style="border-right: 1px solid transparent !important;" id="numero" formControlName="numero"
+                    [ngClass]="{'is-invalid': checkInvalidField('numero')}">
+                  </div>
+                </div>
+                <div class="col-3 form-group">
+                  <label>Bairro</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control"  style="border-right: 1px solid transparent !important;" id="bairro" formControlName="bairro"
+                    [ngClass]="{'is-invalid': checkInvalidField('bairro')}">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-4 form-group">
+                  <label>SUS</label>
+                  <div class="input-group">
+                    <input type="number"  class="form-control" style="border-right: 1px solid transparent !important;" id="sus" formControlName="sus"
+                    [ngClass]="{'is-invalid': checkInvalidField('sus')}">
+                  </div>
+                </div>
+                <div class="col-4 form-group">
+                  <label>CPF</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control"  mask="000.000.000-00" style="border-right: 1px solid transparent !important;" id="cpf" formControlName="cpf"
+                    [ngClass]="{'is-invalid': checkInvalidField('cpf')}">
+                  </div>
+                </div>
+                <div class="col-4 form-group">
+                  <label>Nome do Responsavel</label>
+                  <div class="input-group">
+                    <select class="select-input form-control"
+                    [ngClass]="{'is-invalid': checkInvalidField('nomeResponsavel')}" id="nomeResponsavel" formControlName="nomeResponsavel">
+                      <option *ngFor="let item of nomeResponsavel" [value]="item.nome"> {{ item.nome }} </option>
+                    </select>                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div *ngIf="id">
+              <div class="row row-area">
+                <div class="col-12 form-group">
+                  <div class="input-group">
+                    <h5 style="color: #688B6C;">Membro da Família</h5>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row row-area" *ngFor="let item of membroFamilia; let idx=index">
+                <div class="col-4 form-group">
+                  <div class="input-group">
+                    <input type="text"  class="form-control" placeholder="Nome" 
+                    (change)="adiocionar($event, idx, 1)"  value="{{ item.nome }}" 
+                    style="border-right: 1px solid transparent !important;" >
+                  </div>
+                </div>
+                <div class="col-2 form-group">
+                  <div class="input-group">
+                    <input type="date"  class="form-control" placeholder="Dt.Nascimento" 
+                    (change)="adiocionar($event, idx, 2)"  value="{{ item.dataNascimento }}"
+                    style="border-right: 1px solid transparent !important;" >
+                  </div>
+                </div>
+                <div class="col-2 form-group">
+                  <div class="input-group">
+                    <input type="number"  class="form-control" value="{{ item.sus }}" 
+                    (change)="adiocionar($event, idx, 3)" placeholder="SUS" style="border-right: 1px solid transparent !important;">
+                  </div>
+                </div>
+                <div class="col-1 form-group">
+                  <a class="ml-2" (click)="close(item)" type="button">
+                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.5714 0.874882H8.35714L8.10536 0.363554C8.05202 0.254238 7.96986 0.162283 7.86812 0.0980354C7.76638 0.0337874 7.6491 -0.000204866 7.52946 -0.000117276H4.46786C4.34849 -0.000585689 4.23142 0.0332798 4.13004 0.0975993C4.02866 0.161919 3.94708 0.254091 3.89464 0.363554L3.64286 0.874882H0.428571C0.314907 0.874882 0.205898 0.920976 0.125526 1.00302C0.0451529 1.08507 0 1.19635 0 1.31238L0 2.18738C0 2.30341 0.0451529 2.41469 0.125526 2.49674C0.205898 2.57879 0.314907 2.62488 0.428571 2.62488H11.5714C11.6851 2.62488 11.7941 2.57879 11.8745 2.49674C11.9548 2.41469 12 2.30341 12 2.18738V1.31238C12 1.19635 11.9548 1.08507 11.8745 1.00302C11.7941 0.920976 11.6851 0.874882 11.5714 0.874882ZM1.425 12.7694C1.44544 13.1026 1.58951 13.4154 1.82787 13.644C2.06624 13.8726 2.38098 13.9998 2.70804 13.9999H9.29196C9.61902 13.9998 9.93376 13.8726 10.1721 13.644C10.4105 13.4154 10.5546 13.1026 10.575 12.7694L11.1429 3.49988H0.857143L1.425 12.7694Z" fill="black"/>
+                    </svg>  
+                  </a>
+                </div>
+                </div>
+                <div class="row row-area">
+                  <div class="col-4 form-group">
+                    <div class="input-group">
+                      <button type="button" class="btn btn-primary mr-1" (click)="adiocionarVazio()">
+                        + Adicionar
+                      </button>                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="justify-content-end col-12 p-0" style="display: flex;">
+                <div>
+                  <button type="button" class="btn btn-success mr-1" (click)="submit()">
+                     Salvar
+                  </button>
+                  <button type="button" class="btn btn-primary" [routerLink]="[ id ? '../../family-list': '../family-list']" >
+                    Voltar
+                 </button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

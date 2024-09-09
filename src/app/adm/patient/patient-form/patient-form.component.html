@@ -1,0 +1,173 @@
+<div class="cor-background pl-3">
+  <div class="row">
+    <div class="col-12 pb-3 pt-4">
+      <div class="form-row">
+        <div class="col-lg-12 form-group justify-space">
+          <div class="input-group justify-space">
+            <h3 class="simple-text ml-2 text pl-1">Cadastro de Paciente</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">   
+        <div class="card">
+          <div class="card-body">
+            <div class="col-12" [formGroup]="formGroup">
+              <div class="row row-area">
+                <div class="col-12 form-group">
+                  <label>Nome</label>
+                  <div class="input-group">
+                    <input type="text"  id="nome" formControlName="nome" class="form-control"  style="border-right: 1px solid transparent !important;" 
+                      [ngClass]="{'is-invalid': checkInvalidField('nome')}">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-3 form-group">
+                  <label>SUS</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" id="sus" formControlName="sus"
+                    [ngClass]="{'is-invalid': checkInvalidField('sus')}">
+                  </div>
+                </div>
+                <div class="col-3 form-group">
+                  <label>CPF</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" mask="000.000.000-00" style="border-right: 1px solid transparent !important;" id="cpf" formControlName="cpf"
+                    [ngClass]="{'is-invalid': checkInvalidField('cpf')}">
+                  </div>
+                </div>
+                <div class="col-6 form-group">
+                  <label>Telefone</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" mask="(00)00000-0000" style="border-right: 1px solid transparent !important;" id="telefone" formControlName="telefone"
+                    [ngClass]="{'is-invalid': checkInvalidField('telefone')}">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-5 form-group">
+                  <label>Endereço</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" id="endereco" formControlName="endereco"
+                    [ngClass]="{'is-invalid': checkInvalidField('endereco')}">
+                  </div>
+                </div>
+                <div class="col-1 form-group">
+                  <label>Número</label>
+
+                  <div class="input-group">
+                    <input type="number"  class="form-control" style="border-right: 1px solid transparent !important;" id="numeroCasa" formControlName="numeroCasa"
+                    [ngClass]="{'is-invalid': checkInvalidField('numeroCasa')}">
+                  </div>
+                </div>
+                <div class="col-6 form-group">
+                  <label>Bairro</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" id="bairro" formControlName="bairro"
+                    [ngClass]="{'is-invalid': checkInvalidField('bairro')}">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-6 form-group">
+                  <label>Tem alguma patologia?</label>
+                  <select class="form-control field-height" id="temPatologia" formControlName="temPatologia" [ngClass]="{'is-invalid': checkInvalidField('temPatologia')}">
+
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-6 form-group">
+                  <label>Necessidade Visita do medico?</label>
+                  <select class="form-control field-height" id="necessitaVisitaMedica" formControlName="necessitaVisitaMedica" [ngClass]="{'is-invalid': checkInvalidField('necessitaVisitaMedica')}">
+
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-6 form-group">
+                  <label>Toma algum remedio controlado?</label>
+                  <select class="form-control field-height" id="tomaRemedioControlado" formControlName="tomaRemedioControlado" [ngClass]="{'is-invalid': checkInvalidField('tomaRemedioControlado')}">
+
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-6 form-group">
+                  <label>Tem algum depende?</label>
+                  <select class="form-control field-height" id="temDependente" formControlName="temDependente" [ngClass]="{'is-invalid': checkInvalidField('temDependente')}">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+              </div>
+              <div class="row row-area">
+    
+                <div class="col-3 form-group">
+                  <label>Fuma?</label>
+                  <select class="form-control field-height" id="fuma" formControlName="fuma" [ngClass]="{'is-invalid': checkInvalidField('fuma')}">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-3 form-group">
+                  <label>Bebida?</label>
+                  <select class="form-control field-height" id="bebe" formControlName="bebe" [ngClass]="{'is-invalid': checkInvalidField('bebe')}">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-6 form-group">
+                  <label>Idoso?</label>
+                  <select class="form-control field-height" id="idoso" formControlName="idoso" [ngClass]="{'is-invalid': checkInvalidField('idoso')}">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-6 form-group">
+                  <label>Cancer?</label>
+                  <select class="form-control field-height" id="cancer" formControlName="cancer" [ngClass]="{'is-invalid': checkInvalidField('cancer')}">
+
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-3 form-group">
+                  <label>Filhos?</label>
+                  <select class="form-control field-height" id="filhos" formControlName="filhos" [ngClass]="{'is-invalid': checkInvalidField('filhos')}">
+
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>                
+                </div>
+                <div class="col-3 form-group">
+                  <label>Sexo</label>
+                  <div class="input-group">
+                    <select class="form-control field-height" id="rg" formControlName="rg" [ngClass]="{'is-invalid': checkInvalidField('rg')}">
+                      <option value="Feminino">Feminino</option>
+                      <option value="Masculino">Masculino</option>
+                    </select>                   
+                  </div>          
+                </div>
+                <div class="justify-content-end col-12" style="display: flex;">
+                  <div>
+                    <button type="button" class="btn btn-success mr-1" (click)="submit()">
+                       Salvar
+                    </button>
+                    <button type="button" class="btn btn-primary" [routerLink]="[ id ? '../../patient-list': '../patient-list']" >
+                      Voltar
+                   </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

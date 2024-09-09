@@ -1,0 +1,51 @@
+<div class="cor-background pl-3">
+  <div class="row">
+    <div class="col-12 pb-3 pt-4">
+      <div class="form-row">
+        <div class="col-lg-12 form-group justify-space">
+          <div class="input-group justify-space">
+            <h3 class="simple-text ml-2 text pl-1">Consulta de Usuario</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class="thead-color">
+                  <tr>
+                    <th scope="col" style="width: 5%"></th>
+                    <th scope="col" style="width: 25%">Nome</th>
+                    <th scope="col" style="width: 20%">E-mail</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of user | paginate: paginateConfig; let idx = index">
+                    <td>
+                      <a type="button" [routerLink]="['../pathology-form',item.id]">
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.5594 4.4406L14.1187 5.88123C13.9719 6.0281 13.7344 6.0281 13.5875 5.88123L10.1187 2.41248C9.97187 2.2656 9.97187 2.0281 10.1187 1.88123L11.5594 0.440601C12.1437 -0.143774 13.0937 -0.143774 13.6812 0.440601L15.5594 2.31873C16.1469 2.9031 16.1469 3.8531 15.5594 4.4406ZM8.88124 3.11873L0.674992 11.325L0.0124919 15.1219C-0.0781331 15.6343 0.368742 16.0781 0.881242 15.9906L4.67812 15.325L12.8844 7.11873C13.0312 6.97185 13.0312 6.73435 12.8844 6.58748L9.41562 3.11873C9.26562 2.97185 9.02812 2.97185 8.88124 3.11873ZM3.87812 10.6219C3.70624 10.45 3.70624 10.175 3.87812 10.0031L8.69062 5.1906C8.86249 5.01873 9.13749 5.01873 9.30937 5.1906C9.48124 5.36248 9.48124 5.63748 9.30937 5.80935L4.49687 10.6219C4.32499 10.7937 4.04999 10.7937 3.87812 10.6219ZM2.74999 13.25H4.24999V14.3843L2.23437 14.7375L1.26249 13.7656L1.61562 11.75H2.74999V13.25Z" fill="black"/>
+                        </svg>
+                      </a>
+                    </td>
+                    <td>{{item.nome}}</td>
+                    <td>{{item.email}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <app-pagination [paginationConfig]="paginateConfig" (paginationSearch)="get($event)"
+               [setPage]="paginateConfig.currentPage">
+              </app-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

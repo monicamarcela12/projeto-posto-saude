@@ -1,0 +1,89 @@
+<div class="cor-background pl-3">
+  <div class="row">
+    <div class="col-12 pb-3 pt-4">
+      <div class="form-row">
+        <div class="col-12 pr-3 form-group justify-space">
+          <div class="input-group justify-space">
+            <h3 class="simple-text ml-2 text pl-1">Consulta de Patologia</h3>
+            <div>
+              <button routerLink="../pathology-form" type="button" class="btn btn-success mr-1">
+                <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.5 0H0.5C-0.328125 0 -1 0.671875 -1 1.5V12.5C-1 13.3281 -0.328125 14 0.5 14H11.5C12.3281 14 13 13.3281 13 12.5V1.5C13 0.671875 12.3281 0 11.5 0ZM10.5 7.875C10.5 8.08125 10.3313 8.25 10.125 8.25H7.25V11.125C7.25 11.3313 7.08125 11.5 6.875 11.5H5.125C4.91875 11.5 4.75 11.3313 4.75 11.125V8.25H1.875C1.66875 8.25 1.5 8.08125 1.5 7.875V6.125C1.5 5.91875 1.66875 5.75 1.875 5.75H4.75V2.875C4.75 2.66875 4.91875 2.5 5.125 2.5H6.875C7.08125 2.5 7.25 2.66875 7.25 2.875V5.75H10.125C10.3313 5.75 10.5 5.91875 10.5 6.125V7.875Z" fill="white"/>
+                </svg>
+                 Novo
+              </button>
+              <button (click)="imprimir()" type="button" class="btn btn btn-outline-danger mr-1">
+                <i class="fa fa-file-pdf-o"></i>
+                 PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">   
+        <div class="card mt-2">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="areaToPrint" >
+                    <thead class="thead-color">
+                    <tr>
+                      <th scope="col" style="width: 5%"></th>
+                      <th scope="col" style="width: 90%">Patologia</th>
+                    </tr>
+                    </thead>
+                    <tbody>  
+                      <div class="col-12" *ngIf="!patologia">Nenhum dados da tabela encontrado</div>
+                    <tr *ngFor="let item of patologia | paginate: paginateConfig; let idx = index" >
+                      <td>
+                        <a [routerLink]="['../pathology-form',item.id]">
+                          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5594 4.4406L14.1187 5.88123C13.9719 6.0281 13.7344 6.0281 13.5875 5.88123L10.1187 2.41248C9.97187 2.2656 9.97187 2.0281 10.1187 1.88123L11.5594 0.440601C12.1437 -0.143774 13.0937 -0.143774 13.6812 0.440601L15.5594 2.31873C16.1469 2.9031 16.1469 3.8531 15.5594 4.4406ZM8.88124 3.11873L0.674992 11.325L0.0124919 15.1219C-0.0781331 15.6343 0.368742 16.0781 0.881242 15.9906L4.67812 15.325L12.8844 7.11873C13.0312 6.97185 13.0312 6.73435 12.8844 6.58748L9.41562 3.11873C9.26562 2.97185 9.02812 2.97185 8.88124 3.11873ZM3.87812 10.6219C3.70624 10.45 3.70624 10.175 3.87812 10.0031L8.69062 5.1906C8.86249 5.01873 9.13749 5.01873 9.30937 5.1906C9.48124 5.36248 9.48124 5.63748 9.30937 5.80935L4.49687 10.6219C4.32499 10.7937 4.04999 10.7937 3.87812 10.6219ZM2.74999 13.25H4.24999V14.3843L2.23437 14.7375L1.26249 13.7656L1.61562 11.75H2.74999V13.25Z" fill="black"/>
+                          </svg>
+                        </a>
+                        <a class="ml-2" data-toggle="modal" data-target=".bd-example-modal-sm" type="button" (click)="idExcluir = item.id">
+                          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5714 0.874882H8.35714L8.10536 0.363554C8.05202 0.254238 7.96986 0.162283 7.86812 0.0980354C7.76638 0.0337874 7.6491 -0.000204866 7.52946 -0.000117276H4.46786C4.34849 -0.000585689 4.23142 0.0332798 4.13004 0.0975993C4.02866 0.161919 3.94708 0.254091 3.89464 0.363554L3.64286 0.874882H0.428571C0.314907 0.874882 0.205898 0.920976 0.125526 1.00302C0.0451529 1.08507 0 1.19635 0 1.31238L0 2.18738C0 2.30341 0.0451529 2.41469 0.125526 2.49674C0.205898 2.57879 0.314907 2.62488 0.428571 2.62488H11.5714C11.6851 2.62488 11.7941 2.57879 11.8745 2.49674C11.9548 2.41469 12 2.30341 12 2.18738V1.31238C12 1.19635 11.9548 1.08507 11.8745 1.00302C11.7941 0.920976 11.6851 0.874882 11.5714 0.874882ZM1.425 12.7694C1.44544 13.1026 1.58951 13.4154 1.82787 13.644C2.06624 13.8726 2.38098 13.9998 2.70804 13.9999H9.29196C9.61902 13.9998 9.93376 13.8726 10.1721 13.644C10.4105 13.4154 10.5546 13.1026 10.575 12.7694L11.1429 3.49988H0.857143L1.425 12.7694Z" fill="black"/>
+                          </svg>  
+                        </a>
+                      </td>
+                      <td>{{item.nome}}</td>  
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <app-pagination [paginationConfig]="paginateConfig" (paginationSearch)="get($event)"
+                        [setPage]="paginateConfig.currentPage">
+                </app-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="">
+        <div class="modal-body">
+          <h4 class="modal-title" id="exampleModalLabel">Deseja deleta o Registro?</h4>
+        </div>
+        <div class="d-flex pl-3 mb-2">
+          <button type="button" class="btn btn-danger mr-2 pl-5 pr-5" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-success pl-5 pr-5" data-dismiss="modal" aria-label="Close" (click)="deleteNew(idExcluir)">Sim</button>
+        </div>
+    </div>
+  </div>
+</div>
+

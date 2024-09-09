@@ -1,0 +1,87 @@
+<div class="cor-background pl-3">
+  <div class="row">
+    <div class="col-12 pb-3 pt-4" [formGroup]="formGroup">
+      <div class="form-row">
+        <div class="col-lg-12 form-group justify-space">
+          <div class="input-group justify-space">
+            <h3 class="simple-text ml-2 text pl-1">Cadastro de Recado</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">   
+        <div class="card">
+          <div class="card-body">
+            <div class="col-12">
+              <div class="row row-area">
+                <div class="col-6 form-group">
+                  <label>Nome do ASC</label>
+                  <div class="input-group">
+                    <select class="select-input form-control"
+                    [ngClass]="{'is-invalid': checkInvalidField('nome')}" id="nome" formControlName="nome">
+                      <option *ngFor="let item of asc" [value]="item.nome"> {{ item.nome }} </option>
+                    </select>                  
+                  </div>
+                </div>
+                <div class="col-3 form-group">
+                  <label>SUS</label>
+                  <div class="input-group">
+                    <input type="number"  class="form-control" style="border-right: 1px solid transparent !important;" [ngClass]="{'is-invalid': checkInvalidField('sus')}" id="sus" formControlName="sus">
+                  </div>
+                </div>
+                <div class="col-3 form-group">
+                  <label>Dt.Nascimento</label>
+                  <div class="input-group">
+                    <input type="date"  class="form-control" style="border-right: 1px solid transparent !important;" [ngClass]="{'is-invalid': checkInvalidField('dataNascimento')}" id="dataNascimento" formControlName="dataNascimento">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row row-area">
+                <div class="col-8 form-group">
+                  <label>Endereço</label>
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" 
+                    [ngClass]="{'is-invalid': checkInvalidField('endereco')}" id="endereco" formControlName="endereco">
+                  </div>
+                </div>
+                <div class="col-2 form-group">
+                  <label>Número</label>
+                  <div class="input-group">
+                    <input type="number"  class="form-control" style="border-right: 1px solid transparent !important;" [ngClass]="{'is-invalid': checkInvalidField('numero')}" id="numero" formControlName="numero">
+                  </div>
+                </div>
+                <div class="col-2 form-group">
+                  <label>Bairro</label>
+
+                  <div class="input-group">
+                    <input type="text"  class="form-control" style="border-right: 1px solid transparent !important;" [ngClass]="{'is-invalid': checkInvalidField('bairro')}" id="bairro" formControlName="bairro">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-area">
+                <div class="col-12 form-group">
+                  <label>Recado</label>
+                  <div class="input-group">
+                    <textarea type="text"  class="form-control" style="border-right: 1px solid transparent !important;" 
+                    [ngClass]="{'is-invalid': checkInvalidField('recado')}" id="recado" formControlName="recado"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="justify-content-end col-12 p-0" style="display: flex;">
+                <div>
+                  <button type="button" class="btn btn-success mr-1" (click)="submit()">
+                     Salvar
+                  </button>
+                  <button type="button" class="btn btn-primary" [routerLink]="[ id ? '../../message-list': '../message-list']" >
+                    Voltar
+                 </button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

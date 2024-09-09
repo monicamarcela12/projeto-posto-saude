@@ -1,0 +1,106 @@
+.backg {
+  min-height: 90vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-color: #688B6C;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.login {
+  max-width: 400px;
+  background: #fff;
+}
+
+.col-12 {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 2rem !important;
+}
+
+a {
+  color: black !important;
+  font-size: 14px;
+}
+
+.button {
+  padding-top: 20px;
+}
+
+.esquece {
+  font-size: 12px !important;
+  text-align: center;
+  display: block;
+}
+
+.conectar {
+  font-size: 12px !important;
+  text-align: center;
+  display: block;
+  border: 3px solid #395185 !important;
+  color: #395185 !important;
+}
+
+.conectar:hover {
+  font-size: 12px !important;
+  text-align: center;
+  display: block;
+  background-color: #395185;
+  border: 3px solid #395185 !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1380px){
+  .card {
+    border: 1px solid transparent !important;
+  }
+}
+
+.card {
+  border: 1px solid #FFFF !important;
+}
+
+.form-group {
+  label {
+    color: #666666;
+    background-color: #FAFAFA ;
+  }
+  .form-control {
+    background-color: #ECE9E9 !important;
+    border: 1px solid transparent !important;
+    border-bottom: 1px solid #313133 !important;
+    border-radius: 0 !important;
+    resize: none;
+  }
+  .form-control:hover {
+    border: 1px solid transparent;
+  }
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0.275rem 0.70rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ECE9E9 !important;
+  border: 1px solid transparent !important;
+  border-bottom: 1px solid #313133 !important;
+  border-radius: 0 !important;
+}

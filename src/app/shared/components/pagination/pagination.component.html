@@ -1,0 +1,11 @@
+<pagination-template class="btn btn-clear" [id]="paginationConfig.id" #p="paginationApi"
+(pageChange)="result($event)" directionLinks="true" autoHide="true" responsive="true"
+    previousLabel="Previous" nextLabel="Next">
+    <ul class="pagination pagination-sm justify-content-center">
+        <li class="page-item ml-2" *ngFor="let page of p.pages" [class.active]="setPage == page.value">
+            <a style="cursor: pointer" class="page-link" (click)="p.setCurrent(page.value)">
+                {{ page.label }}
+            </a>
+        </li>
+    </ul>
+</pagination-template>
